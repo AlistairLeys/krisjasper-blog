@@ -7,3 +7,6 @@ vendor/
 Gemfile.lock
 convert_posts.py
 .DS_Store
+
+# Local Netlify folder
+.netlify

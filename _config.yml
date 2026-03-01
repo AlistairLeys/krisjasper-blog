@@ -31,5 +31,4 @@ defaults:
     values:
       layout: "post"
 
-# Collections
-collections_dir: .
+
