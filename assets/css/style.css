@@ -144,6 +144,10 @@ h2.date-header {
   text-indent: -15px;
   line-height: 1.5em;
 }
+.sidebar .BlogArchive li {
+  text-indent: 0;
+  padding-left: 10px;
+}
 .sidebar .widget, .main .widget {
   border-bottom: 1px dotted #333333;
   margin: 0 0 1.5em;
