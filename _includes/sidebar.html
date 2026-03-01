@@ -4,7 +4,23 @@
 <div class="widget HTML" id="HTML1">
 <h2 class="title">British Time</h2>
 <div class="widget-content">
-<span style="color:#999; font-size:small;">[British Time Clock]</span>
+<div id="british-clock" style="font-family: 'Courier New', monospace; color: #cccccc; font-size: 22px; letter-spacing: 2px; text-align: center; padding: 8px 0;">
+  <span id="clock-time"></span>
+  <div id="clock-date" style="font-size: 11px; color: #999; margin-top: 4px; letter-spacing: 1px;"></div>
+</div>
+<script>
+(function() {
+  function updateClock() {
+    var now = new Date();
+    var opts = { timeZone: 'Europe/London', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
+    var dateOpts = { timeZone: 'Europe/London', weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' };
+    document.getElementById('clock-time').textContent = now.toLocaleTimeString('en-GB', opts);
+    document.getElementById('clock-date').textContent = now.toLocaleDateString('en-GB', dateOpts).toUpperCase();
+  }
+  updateClock();
+  setInterval(updateClock, 1000);
+})();
+</script>
 </div>
 <div class="clear"></div>
 </div>
