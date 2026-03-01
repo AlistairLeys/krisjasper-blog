@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  {% feed_meta %}
+</head>
+<body>
+  <div id="header-wrapper">
+    <div id="header-inner">
+      <div id="header">
+        <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
+        <p class="description">{{ site.description }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="outer-wrapper">
+    <div id="main-wrapper">
+      {{ content }}
+    </div>
+
+    {% include sidebar.html %}
+    
+    <div class="clear">&nbsp;</div>
+  </div>
+
+  <div id="footer">
+    <p style="color:#666; font-size:11px;">
+      Restored from the <a href="https://web.archive.org/web/20080410123724/http://www.krisjasper.com/">Wayback Machine</a> archive.
+      Originally published Oct 2007 – Apr 2008.
+    </p>
+  </div>
+
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
+</body>
+</html>

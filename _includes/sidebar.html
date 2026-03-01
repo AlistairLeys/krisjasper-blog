@@ -1,0 +1,203 @@
+<div id="sidebar-wrapper">
+<div class="sidebar section" id="sidebar">
+
+<div class="widget HTML" id="HTML1">
+<h2 class="title">British Time</h2>
+<div class="widget-content">
+<span style="color:#999; font-size:small;">[British Time Clock]</span>
+</div>
+<div class="clear"></div>
+</div>
+
+<div class="widget Image" id="Image2">
+<h2>Restless Static</h2>
+<div class="widget-content">
+<img alt="Restless Static" height="220" id="Image2_img" src="{{ '/assets/images/kris_new_edited-2.jpg' | relative_url }}" width="146"/>
+</div>
+<div class="clear"></div>
+</div>
+
+<div class="widget Text" id="Text1">
+<h2 class="title">I'd love to hear from you:</h2>
+<div class="widget-content">
+<a href="mailto:krisjasper@krisjasper.com">krisjasper@krisjasper.com</a>
+</div>
+<div class="clear"></div>
+</div>
+
+<div class="widget Profile" id="Profile1">
+<h2>About KJA</h2>
+<div class="widget-content">
+<img alt="My Photo" class="profile-img" height="80" src="{{ '/assets/images/24022008173_001.jpg' | relative_url }}" width="60"/>
+<dl class="profile-datablock">
+<dt class="profile-data">KRIS JASPER</dt>
+<dd class="profile-textblock">Nothing really unusual.</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+
+<div class="widget Image" id="Image6">
+<div class="widget-content">
+<img alt="" height="220" id="Image6_img" src="{{ '/assets/images/10022008111_001.jpg' | relative_url }}" width="124"/>
+</div>
+<div class="clear"></div>
+</div>
+
+<div class="widget BlogArchive" id="BlogArchive1">
+<h2>JOURNALS</h2>
+<div class="widget-content">
+{% assign posts_by_year = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+{% for year in posts_by_year %}
+<h3 style="margin:0.5em 0 0.25em; font-size:90%;">{{ year.name }} ({{ year.items | size }})</h3>
+{% assign posts_by_month = year.items | group_by_exp: "post", "post.date | date: '%B'" %}
+<ul style="margin:0; padding:0;">
+{% for month in posts_by_month %}
+<li style="list-style:none; padding:0 0 0.25em 10px;">
+<strong>{{ month.name }}</strong> ({{ month.items | size }})
+<ul style="margin:0.25em 0 0.5em; padding:0;">
+{% for post in month.items %}
+<li style="list-style:none; padding:0 0 0.15em 10px; font-size:90%;"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+{% endfor %}
+</ul>
+</li>
+{% endfor %}
+</ul>
+{% endfor %}
+</div>
+<div class="clear"></div>
+</div>
+
+<div class="widget LinkList" id="LinkList1">
+<h2>BLOGS I READ</h2>
+<div class="widget-content">
+<ul>
+<li><a href="http://schoolhopper.blogspot.com/">ABAD ng Tuguegaraw</a></li>
+<li><a href="http://aceychan.blogspot.com/">ACEY tralalalala</a></li>
+<li><a href="http://dabitchnightkz.blogspot.com/">Alinah - chatterbox girl</a></li>
+<li><a href="http://wwwthelonelyplanet.blogspot.com/">Arabian Josh</a></li>
+<li><a href="http://roellejohn.blogspot.com/">Arjay affectueux</a></li>
+<li><a href="http://www.rsandarino.blogspot.com/">ARYO Islander in the city</a></li>
+<li><a href="http://batangwxyz.blogspot.com/">Batang WXYZ</a></li>
+<li><a href="http://www.blogniinday.com/">BLOG NI INDAY</a></li>
+<li><a href="http://bobotsabijon.blogspot.com/">bobot's confessions</a></li>
+<li><a href="http://palaboy-lamonster.blogspot.com/">Carlotta - Traveller</a></li>
+<li><a href="http://earvin01.blogspot.com/">Carrot Prince</a></li>
+<li><a href="http://anukayayun.blogspot.com/">Cold man</a></li>
+<li><a href="http://buzzwerth.blogspot.com/">DAZED BLU</a></li>
+<li><a href="http://dean-eleven.blogspot.com/">Dean: eleven</a></li>
+<li><a href="http://msc-quest.blogspot.com/">Doc Cedeux</a></li>
+<li><a href="http://kokeymonster.com/">Fer Bert: kokeymonster</a></li>
+<li><a href="http://savetheearth-now.blogspot.com/">Gina - Earth Saver</a></li>
+<li><a href="http://joshmeandmydoves.blogspot.com/">Josh and his Doves</a></li>
+<li><a href="http://kapetyosi.blogspot.com/">Kape't Yosi ni Jericho</a></li>
+<li><a href="http://kape-ni-carl.blogspot.com/">kapehan ni Carl</a></li>
+<li><a href="http://adobongcomatose.blogspot.com/">Kei - Adobong Coma</a></li>
+<li><a href="http://kwentongbarbero.com/">Kwentong barbero</a></li>
+<li><a href="http://lifeinlenses.blogspot.com/">Lad's Photos</a></li>
+<li><a href="http://lawstude.blogspot.com/">Lawstude</a></li>
+<li><a href="http://lunes.uni.cc/">LUNES</a></li>
+<li><a href="http://eat-all-you-can.blogspot.com/">Mike: eat all you can</a></li>
+<li><a href="http://anthonjuan.blogspot.com/">Negrense Anthon Juan</a></li>
+<li><a href="http://theveganprince.com/">Negrense Mark Xander</a></li>
+<li><a href="http://jmagreda.blogspot.com/">Negrense Mojo Potato</a></li>
+<li><a href="http://rufffles.blogspot.com/">nurse rufffles</a></li>
+<li><a href="http://phototecture.blogspot.com/">phototecture</a></li>
+<li><a href="http://poshprobinsyana.blogspot.com/">Posh Promdi</a></li>
+<li><a href="http://www.rareordinarythoughts.com/">Recel's rare ordinary thoughts</a></li>
+<li><a href="http://redlan76.blogspot.com/">REDLAN of Iloilo</a></li>
+<li><a href="http://rushingtrains.blogspot.com/">Rushing Trains</a></li>
+<li><a href="http://scarletmirage.blogspot.com/">SCARLET</a></li>
+<li><a href="http://thedoninme.blogspot.com/">si Don Anonymous</a></li>
+<li><a href="http://stupidorkris.blogspot.com/">Stupidorkris</a></li>
+<li><a href="http://dongism.blogspot.com/">the Dong</a></li>
+<li><a href="http://wanderingcommuter.blogspot.com/">Wandering Commuter</a></li>
+<li><a href="http://empermera.blogspot.com/">Xienah</a></li>
+<li><a href="http://yarnhoj.co.nr/">yaRnhoJ</a></li>
+</ul>
+<div class="clear"></div>
+</div>
+</div>
+
+<div class="widget LinkList" id="LinkList4">
+<h2>I'm Proud of Where I Work</h2>
+<div class="widget-content">
+<ul>
+<li><a href="http://www.milburycare.com/">Voyage</a></li>
+</ul>
+<div class="clear"></div>
+</div>
+</div>
+
+<div class="widget Image" id="Image5">
+<div class="widget-content">
+<img alt="" height="179" id="Image5_img" src="{{ '/assets/images/award7_edited.jpg' | relative_url }}" width="179"/>
+</div>
+<div class="clear"></div>
+</div>
+
+<div class="widget Image" id="Image3">
+<div class="widget-content">
+<img alt="" height="160" id="Image3_img" src="{{ '/assets/images/excel.jpg' | relative_url }}" width="105"/>
+</div>
+<div class="clear"></div>
+</div>
+
+<div class="widget LinkList" id="LinkList2">
+<h2>WE KILL TIME</h2>
+<div class="widget-content">
+<ul>
+<li><a href="http://www.abs-cbn.com/">ABSCBN no.1</a></li>
+<li><a href="http://alluc.org/">ALLUC free movies</a></li>
+<li><a href="http://americanexpress.co.uk/">American Travels</a></li>
+<li><a href="http://www.birmingham-eating.com/">Birmingham EAT OUT</a></li>
+<li><a href="http://blockbuster.co.uk/">Blockbuster DVDs</a></li>
+<li><a href="http://www.cineworld.co.uk/">CINEWORLD</a></li>
+<li><a href="http://www.fitnessfirst.co.uk/">Fitness First</a></li>
+<li><a href="http://imdb.com/">IMDB</a></li>
+<li><a href="http://www.lastminute.com/">Last Minute travels</a></li>
+<li><a href="http://www.nationalexpress.com/">National Express</a></li>
+<li><a href="http://starbucks.co.uk/en-GB/">Starbucks</a></li>
+<li><a href="http://www.myvue.com/index.asp">Vue cinema</a></li>
+<li><a href="http://youtube.com/">YOU TUBE</a></li>
+</ul>
+<div class="clear"></div>
+</div>
+</div>
+
+<div class="widget LinkList" id="LinkList3">
+<h2>I SHOP</h2>
+<div class="widget-content">
+<ul>
+<li><a href="http://www.riverisland.com/">River Island</a></li>
+<li><a href="http://www.asos.com/">ASOS</a></li>
+<li><a href="http://www.howies.co.uk/">HOWIES</a></li>
+<li><a href="http://www.iwantoneofthose.com/">I want one of those</a></li>
+<li><a href="http://www.armaniexchange.com/home.do">Armani</a></li>
+<li><a href="http://www.uk.abercrombie.com/">A and F</a></li>
+<li><a href="http://www.fcuk.com/uk/">FCUK</a></li>
+<li><a href="http://amazon.co.uk/">AMAZON</a></li>
+<li><a href="http://topman.co.uk/">TOPMAN</a></li>
+</ul>
+<div class="clear"></div>
+</div>
+</div>
+
+<div class="widget Image" id="Image1">
+<h2>Proud Pinoy</h2>
+<div class="widget-content">
+<img alt="Proud Pinoy" height="97" id="Image1_img" src="{{ '/assets/images/proudlypinoymedium.png' | relative_url }}" width="100"/>
+</div>
+<div class="clear"></div>
+</div>
+
+<div class="widget HTML" id="HTML2">
+<h2 class="title">UNITED SEA</h2>
+<div class="widget-content">
+<a href="http://unitedsea.blogspot.com/"><img alt="Ten nations. One blog." src="{{ '/assets/images/SEABLOGGERSUNITEDbar.gif' | relative_url }}"/></a>
+</div>
+<div class="clear"></div>
+</div>
+
+</div>
+</div>

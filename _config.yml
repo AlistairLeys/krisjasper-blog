@@ -1,0 +1,35 @@
+title: KRIS JASPER
+description: "Nothing really unusual."
+url: ""
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+permalink: /:year/:month/:day/:title/
+
+# Pagination
+paginate: 10
+paginate_path: "/page/:num/"
+
+plugins:
+  - jekyll-paginate
+  - jekyll-feed
+
+# Exclude build scripts
+exclude:
+  - convert_posts.py
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - README.md
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+# Collections
+collections_dir: .

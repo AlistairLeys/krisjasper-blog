@@ -1,0 +1,221 @@
+/*
+-----------------------------------------------
+Blogger Template Style
+Name:     Minima Black
+Designer: Douglas Bowman
+URL:      www.stopdesign.com
+Date:     26 Feb 2004
+Updated by: Blogger Team
+Restored: 2026
+----------------------------------------------- */
+
+body {
+  background: #000000;
+  margin: 0;
+  color: #ffffff;
+  font: x-small "Trebuchet MS", Trebuchet, Verdana, Sans-serif;
+  font-size: small;
+  text-align: center;
+}
+
+a:link { color: #999999; text-decoration: none; }
+a:visited { color: #cccccc; text-decoration: none; }
+a:hover { color: #99C9FF; text-decoration: underline; }
+a img { border-width: 0; }
+
+/* Header */
+#header-wrapper {
+  width: 715px;
+  margin: 0 auto 10px;
+  border: 1px solid #333333;
+}
+#header-inner {
+  background-position: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+#header {
+  margin: 5px;
+  border: 1px solid #333333;
+  text-align: center;
+  color: #ffffff;
+}
+#header h1 {
+  margin: 5px 5px 0;
+  padding: 15px 20px .25em;
+  line-height: 1.2em;
+  text-transform: uppercase;
+  letter-spacing: .2em;
+  font: normal bold 617% Georgia, Times, serif;
+}
+#header a { color: #ffffff; text-decoration: none; }
+#header a:hover { color: #ffffff; }
+#header .description {
+  margin: 0 5px 5px;
+  padding: 0 20px 15px;
+  max-width: 700px;
+  text-transform: uppercase;
+  letter-spacing: .2em;
+  line-height: 1.4em;
+  font: normal normal 174% Times, serif;
+  color: #cc0000;
+}
+
+/* Outer-Wrapper */
+#outer-wrapper {
+  width: 660px;
+  margin: 0 auto;
+  padding: 10px;
+  text-align: left;
+  font: normal normal 100% Georgia, Times, serif;
+}
+#main-wrapper {
+  width: 410px;
+  float: left;
+  word-wrap: break-word;
+  overflow: hidden;
+}
+#sidebar-wrapper {
+  width: 220px;
+  float: right;
+  word-wrap: break-word;
+  overflow: hidden;
+}
+
+/* Headings */
+h2 {
+  margin: 1.5em 0 .75em;
+  font: normal bold 86% 'Trebuchet MS', Trebuchet, Arial, Verdana, Sans-serif;
+  line-height: 1.4em;
+  text-transform: uppercase;
+  letter-spacing: .2em;
+  color: #ffffff;
+}
+
+/* Posts */
+h2.date-header {
+  margin: 1.5em 0 .5em;
+}
+.post {
+  margin: .5em 0 1.5em;
+  border-bottom: 1px dotted #333333;
+  padding-bottom: 1.5em;
+}
+.post h3 {
+  margin: .25em 0 0;
+  padding: 0 0 4px;
+  font-size: 140%;
+  font-weight: normal;
+  line-height: 1.4em;
+  color: #99C9FF;
+}
+.post h3 a, .post h3 a:visited, .post h3 strong {
+  display: block;
+  text-decoration: none;
+  color: #99C9FF;
+  font-weight: bold;
+}
+.post h3 strong, .post h3 a:hover { color: #ffffff; }
+.post p { margin: 0 0 .75em; line-height: 1.6em; }
+.post-footer {
+  margin: .75em 0;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  font: normal normal 77% 'Trebuchet MS', Trebuchet, Arial, Verdana, Sans-serif;
+  line-height: 1.4em;
+}
+.post img {
+  padding: 4px;
+  border: 1px solid #333333;
+}
+.post blockquote { margin: 1em 20px; }
+.post blockquote p { margin: .75em 0; }
+
+/* Sidebar Content */
+.sidebar {
+  color: #C3D9FF;
+  line-height: 1.5em;
+}
+.sidebar ul { list-style: none; margin: 0; padding: 0; }
+.sidebar li {
+  margin: 0;
+  padding: 0 0 .25em 15px;
+  text-indent: -15px;
+  line-height: 1.5em;
+}
+.sidebar .widget, .main .widget {
+  border-bottom: 1px dotted #333333;
+  margin: 0 0 1.5em;
+  padding: 0 0 1.5em;
+}
+.main .Blog { border-bottom-width: 0; }
+
+/* Profile */
+.profile-img {
+  float: left;
+  margin: 0 5px 5px 0;
+  padding: 4px;
+  border: 1px solid #333333;
+}
+.profile-data {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  font: normal normal 77% 'Trebuchet MS', Trebuchet, Arial, Verdana, Sans-serif;
+  color: #ffffff;
+  font-weight: bold;
+  line-height: 1.6em;
+}
+.profile-datablock { margin: .5em 0 .5em; }
+.profile-textblock { margin: 0.5em 0; line-height: 1.6em; }
+.profile-link {
+  font: normal normal 77% 'Trebuchet MS', Trebuchet, Arial, Verdana, Sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+}
+
+/* Footer */
+#footer {
+  width: 660px;
+  clear: both;
+  margin: 0 auto;
+  padding-top: 15px;
+  line-height: 1.6em;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  text-align: center;
+}
+
+/* Pagination */
+.pagination {
+  text-align: center;
+  margin: 2em 0;
+  color: #999;
+}
+.pagination a {
+  color: #99C9FF;
+  padding: 0 10px;
+}
+.pagination .current {
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Responsive tweaks */
+img { max-width: 100%; height: auto; }
+
+/* Label/tag styles */
+.label { display: inline; margin-right: 4px; color: #999; }
+.post-comment-link { margin-left: 0.6em; color: #999; }
+
+.archive-notice {
+  margin-top: 30px;
+  padding: 15px;
+  border-top: 1px solid #333;
+  color: #666;
+  font-size: 11px;
+  text-align: center;
+  line-height: 1.6;
+}
+.archive-notice a { color: #9ad; }
