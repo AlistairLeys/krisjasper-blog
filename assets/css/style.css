@@ -223,3 +223,56 @@ img { max-width: 100%; height: auto; }
   line-height: 1.6;
 }
 .archive-notice a { color: #9ad; }
+
+/* ===== Restored Blog Comments ===== */
+.comments-section {
+  margin-top: 30px;
+  padding-top: 15px;
+  border-top: 1px dashed #444;
+}
+.comments-header {
+  color: #99C9FF;
+  font-size: 14px;
+  font-weight: normal;
+  margin-bottom: 15px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #333;
+}
+.comment {
+  margin-bottom: 18px;
+  padding: 10px 12px;
+  background: #1a1a1a;
+  border-left: 3px solid #444;
+  font-size: 12px;
+  line-height: 1.6;
+}
+.comment-author {
+  color: #99C9FF;
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 11px;
+}
+.comment-author a {
+  color: #99C9FF;
+  text-decoration: none;
+}
+.comment-author a:hover {
+  text-decoration: underline;
+}
+.comment-body {
+  color: #ccc;
+  margin: 5px 0;
+  word-wrap: break-word;
+}
+.comment-body a {
+  color: #9ad;
+}
+.comment-body br {
+  line-height: 1.8;
+}
+.comment-timestamp {
+  color: #666;
+  font-size: 10px;
+  margin-top: 5px;
+  font-style: italic;
+}
