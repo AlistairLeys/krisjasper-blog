@@ -1,0 +1,17 @@
+{% assign video_url = include.url %}
+{% if video_url contains "youtube.com/watch" %}
+  {% assign video_id = video_url | split: "v=" | last | split: "&" | first %}
+  <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/{{ video_id }}" frameborder="0" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+  </div>
+{% elsif video_url contains "youtu.be/" %}
+  {% assign video_id = video_url | split: "youtu.be/" | last | split: "?" | first %}
+  <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/{{ video_id }}" frameborder="0" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+  </div>
+{% elsif video_url contains "vimeo.com/" %}
+  {% assign video_id = video_url | split: "vimeo.com/" | last | split: "?" | first %}
+  <div class="video-container">
+    <iframe src="https://player.vimeo.com/video/{{ video_id }}" frameborder="0" allowfullscreen allow="autoplay; fullscreen; picture-in-picture"></iframe>
+  </div>
+{% endif %}

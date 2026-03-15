@@ -1,0 +1,100 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KRIS JASPER - Dashboard</title>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #000;
+      color: #fff;
+      font-family: Georgia, Times, serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .dashboard-card {
+      background: #111;
+      border: 1px solid #333;
+      padding: 50px 40px;
+      text-align: center;
+      max-width: 420px;
+      width: 90%;
+    }
+    .dashboard-card h1 {
+      font-size: 2.4em;
+      text-transform: uppercase;
+      letter-spacing: .2em;
+      margin-bottom: 8px;
+    }
+    .dashboard-card .tagline {
+      color: #cc0000;
+      text-transform: uppercase;
+      letter-spacing: .2em;
+      font-size: 0.9em;
+      margin-bottom: 40px;
+    }
+    .dashboard-card .login-btn {
+      display: inline-block;
+      background: #cc0000;
+      color: #fff;
+      border: none;
+      padding: 14px 36px;
+      font-family: 'Trebuchet MS', Trebuchet, Arial, sans-serif;
+      font-size: 0.85em;
+      text-transform: uppercase;
+      letter-spacing: .15em;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .dashboard-card .login-btn:hover {
+      background: #ff1a1a;
+    }
+    .dashboard-card .status {
+      margin-top: 20px;
+      color: #666;
+      font-size: 0.8em;
+    }
+  </style>
+</head>
+<body>
+  <div class="dashboard-card">
+    <h1>Kris Jasper</h1>
+    <p class="tagline">Dashboard</p>
+    <button class="login-btn" id="login-btn">Log In to Dashboard</button>
+    <p class="status" id="status"></p>
+  </div>
+
+  <script>
+    var statusEl = document.getElementById('status');
+    var btnEl = document.getElementById('login-btn');
+
+    function goToAdmin() {
+      window.location.href = '/admin/';
+    }
+
+    // If already logged in, redirect straight to CMS
+    if (window.netlifyIdentity && window.netlifyIdentity.currentUser()) {
+      statusEl.textContent = 'Redirecting...';
+      goToAdmin();
+    }
+
+    btnEl.addEventListener('click', function () {
+      if (window.netlifyIdentity) {
+        netlifyIdentity.open();
+      }
+    });
+
+    if (window.netlifyIdentity) {
+      netlifyIdentity.on('login', function () {
+        goToAdmin();
+      });
+    }
+  </script>
+</body>
+</html>

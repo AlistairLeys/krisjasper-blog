@@ -8,5 +8,60 @@
 </head>
 <body>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <script>
+    var PostPreview = createClass({
+      render: function () {
+        var entry = this.props.entry;
+        var title = entry.getIn(['data', 'title']) || '';
+        var date = entry.getIn(['data', 'date']);
+        var featuredImage = entry.getIn(['data', 'featured_image']);
+        var videoUrl = entry.getIn(['data', 'video_url']);
+        var tags = entry.getIn(['data', 'tags']);
+        var body = this.props.widgetFor('body');
+
+        var dateStr = date ? new Date(date).toLocaleDateString('en-GB', { weekday: 'long', day: '2-digit', month: 'long', year: 'numeric' }) : '';
+
+        var videoEmbed = null;
+        if (videoUrl) {
+          var videoId = '';
+          var src = '';
+          if (videoUrl.indexOf('youtube.com/watch') !== -1) {
+            videoId = videoUrl.split('v=')[1]; if (videoId) videoId = videoId.split('&')[0];
+            src = 'https://www.youtube.com/embed/' + videoId;
+          } else if (videoUrl.indexOf('youtu.be/') !== -1) {
+            videoId = videoUrl.split('youtu.be/')[1]; if (videoId) videoId = videoId.split('?')[0];
+            src = 'https://www.youtube.com/embed/' + videoId;
+          } else if (videoUrl.indexOf('vimeo.com/') !== -1) {
+            videoId = videoUrl.split('vimeo.com/')[1]; if (videoId) videoId = videoId.split('?')[0];
+            src = 'https://player.vimeo.com/video/' + videoId;
+          }
+          if (src) {
+            videoEmbed = h('div', { style: { position: 'relative', width: '100%', paddingBottom: '56.25%', margin: '15px 0' } },
+              h('iframe', { src: src, style: { position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 0 }, allowFullScreen: true })
+            );
+          }
+        }
+
+        var tagEls = null;
+        if (tags && tags.size) {
+          tagEls = h('div', { style: { margin: '15px 0' } },
+            tags.map(function (tag) {
+              return h('span', { key: tag, style: { display: 'inline-block', background: '#1a1a1a', color: '#999', border: '1px solid #333', padding: '3px 10px', marginRight: '6px', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '.1em' } }, tag);
+            })
+          );
+        }
+
+        return h('div', { style: { background: '#000', color: '#fff', fontFamily: 'Georgia, Times, serif', padding: '20px', minHeight: '100vh' } },
+          h('h2', { style: { color: '#fff', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '.2em' } }, dateStr),
+          h('h3', { style: { color: '#99C9FF', fontSize: '140%', fontWeight: 'normal' } }, title),
+          featuredImage ? h('img', { src: this.props.getAsset(featuredImage).toString(), style: { display: 'block', width: '100%', margin: '15px 0', padding: '4px', border: '1px solid #333' } }) : null,
+          videoEmbed,
+          h('div', { style: { lineHeight: '1.6em' } }, body),
+          tagEls
+        );
+      }
+    });
+    CMS.registerPreviewTemplate('posts', PostPreview);
+  </script>
 </body>
 </html>
